@@ -11,7 +11,7 @@ var catalogRouter = require('./routes/catalog');
 var app = express();
 //Set up mongoose connection
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb://shuchong:y258258@ds159661.mlab.com:59661/local_libraries';
+var mongoDB = process.env.MONGODB_URI || 'mongodb://shuchong:y258258@ds159661.mlab.com:59661/local_libraries';
 mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
